@@ -14,6 +14,7 @@ function ArtisanDashboard() {
               <div className="type-price">
                 <h3 className="type">Promise Magoga</h3>
                 <p className="price">Pretoria, South Africa</p>
+                <p>17 minutes ago</p>
               </div>
             </div>
             <div className='postCardDes'>
@@ -32,6 +33,7 @@ function ArtisanDashboard() {
               <div className="type-price">
                 <h3 className="type">Tshego Marope</h3>
                 <p className="price">Pretoria, South Africa</p>
+                <p>2 hours ago</p>
               </div>
             </div>
             <div className='postCardDes'>
@@ -50,6 +52,7 @@ function ArtisanDashboard() {
               <div className="type-price">
                 <h3 className="type">Gontse Makhubela</h3>
                 <p className="price">Pretoria, South Africa</p>
+                <p>37 minutes ago</p>
               </div>
             </div>
             <div className='postCardDes'>
@@ -68,6 +71,8 @@ function ArtisanDashboard() {
               <div className="type-price">
                 <h3 className="type">Tshepiso Mohale</h3>
                 <p className="price">Pretoria, South Africa</p>
+                <p>1 day ago</p>
+
               </div>
             </div>
             <div className='postCardDes'>
