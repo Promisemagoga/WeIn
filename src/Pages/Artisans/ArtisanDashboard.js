@@ -1,5 +1,6 @@
 import React from 'react'
 import HomeNav from './HomeNavBar'
+import Footer from '../../Components/Footer'
 
 
 function ArtisanDashboard() {
@@ -86,6 +87,7 @@ function ArtisanDashboard() {
         </div>
      
       </div>
+      <Footer/>
     </div>
   )
 }
