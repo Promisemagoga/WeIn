@@ -24,7 +24,7 @@ function App() {
 		<Router>
 			<Routes>
 				<Route path="/" element={<LandingPage/>}/>
-				// <Route path="/" element={<ArtisanDashboard/>}/>
+				{/*  <Route path="/" element={<ArtisanDashboard/>}/> */}
 				<Route path="/About" element={<AboutUs/>}/>
 				<Route path="/ContactUs" element={<ContactUs/>}></Route>
 
