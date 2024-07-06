@@ -619,10 +619,12 @@ main {
   justify-content: space-around;
   align-items: center;
   width: 70%;
-  height: auto;
+  height: 70vh;
   padding: 30px 0px 50px 0px;
-  margin-top: 250px;
+  /* margin-top: 250px; */
   border-radius: 20px;
+  position: relative;
+  top: 150px;
   background-color: #ffffff;
 }
 
@@ -649,14 +651,27 @@ form {
   height: 100%;
 }
 
-/* .registerForm {
+.registerForm {
   overflow-y: scroll;
-} */
+  
+}
+
+.registerForm::-webkit-scrollbar{
+  display: none;
+}
 
 .groupInput {
   display: flex;
   flex-direction: row;
  column-gap: 10px;
+}
+
+.groupInput label{
+  width: 50%;
+}
+
+select{
+  height: 7vh;
 }
 
 .formHeader {

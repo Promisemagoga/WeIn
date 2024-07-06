@@ -64,7 +64,7 @@ function Register() {
                              <label>
                                 Profile Picture
                                 <br />
-                                <input type='file' onChange={(event) => setProfilePic(event.target.value)} style={{ border: '1px solid grey' }} />
+                                <input type='file' onChange={(event) => setProfilePic(event.target.value)} style={{ border: '1px solid grey', padding:'10px' }} />
                             </label>
                             <select onChange={(event) => setRole(event.target.value)}>
                                 <option value="">Role</option>
