@@ -13,7 +13,7 @@ function Login({ setOpenLogin }) {
             <div className='modalForm'>
                 <section className='modalFormCont '>
                     <form>
-                        {/* <Close onClick={closeModal} /> */}
+                        <Close onClick={closeModal} style={{color:"grey", fontSize:'30px',cursor:"pointer"}}/>
                         <div href="/" className="logo">
                             <img src={require("../Assets/Icons/2823525.png")} className='logoImg' />
                             <div className='logoTypo'>

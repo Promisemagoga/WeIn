@@ -674,6 +674,12 @@ select{
   height: 7vh;
 }
 
+.checkboxes input{
+  width: 5% !important;
+  height: 2.5vh !important;
+  margin-right: 5px;
+}
+
 .formHeader {
   width: 100%;
   display: flex;
