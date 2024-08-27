@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Theme } from '../ColorPallete/Theme'
 import { Close } from '@mui/icons-material'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../Config/Firebase'
 
 function Login({ setOpenLogin }) {
 
+    const [email, setEmail] = useState("")
+    const[password, setPassword] = useState("")
+
     function closeModal() {
         setOpenLogin(false)
+    }
+
+    const login = () =>{
+        signInWithEmailAndPassword(auth, email,password)
+        .then(() =>{
+            console.log("User Successfully logged in");
+        })
+        .catch((error) => {
+            if (error.code === "auth/invalid-email") {
+              alert("No user found with that email address");
+            } else if (error.code === "auth/wrong-password") {
+              alert("Incorrect password");
+            } else {
+              console.log(error.message);
+            }
+          });
     }
 
     return (
@@ -31,7 +52,7 @@ function Login({ setOpenLogin }) {
                                 <input placeholder='Enter password' />
                                 <p>Forgot Password</p>
                             </label>
-                            <button>Login</button>
+                            <button onClick={login}>Login</button>
                         </div>
                     </form>
                     <img src={require('../Assets/images/contact-img.png')} />

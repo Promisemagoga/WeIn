@@ -13,34 +13,71 @@ import {
 	Routes,
 	Route,
 	Navigate,
-  } from "react-router-dom";
+} from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
+import { useEffect, useState } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { auth, db } from "./Config/Firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import ClientDash from "./Pages/Clients/ClientDash";
+import ArtisanDash from "./Pages/Artisans/ArtisanDash";
 
 
 
 function App() {
+
+	const [isAuthenticated, setIsAuthenticated] = useState(null)
+	const [userRole, setUserRole] = useState()
+
+	useEffect(() => {
+		onAuthStateChanged(auth, (user) => {
+		  if (user) {
+			console.log(user);
+			const uid = user.uid;
+			setIsAuthenticated(user);
+		  } else {
+		  }
+		});
+	
+	  }, [])
+
+	useEffect(() => {
+		async function getUserRole() {
+			const roleRef = collection(db, "users")
+			const queryByEmail = query(roleRef, where("email", "==", auth.currentUser.email))
+			const querySnapshot = await getDocs(queryByEmail)
+			if (querySnapshot.empty) {
+				console.log("no user!!!");
+			} else {
+				querySnapshot.forEach((doc) => {
+					setUserRole(doc.data().role)
+				})
+			}
+		}
+
+		if (isAuthenticated) {
+			getUserRole()
+		}
+	}, [isAuthenticated])
+
 	return (
 		<Router>
 			<Routes>
-				<Route path="/" element={<LandingPage/>}/>
-				{/*  <Route path="/" element={<ArtisanDashboard/>}/> */}
-				<Route path="/About" element={<AboutUs/>}/>
-				<Route path="/ContactUs" element={<ContactUs/>}></Route>
-
+				 <Route path="/" element={<ClientDash />} />
+				{/* {userRole === 'client' && <Route path="/" element={<ClientDashboard />} />}
+				{!userRole && <Route path="/" element={<LandingPage/>}/>}
+				{!userRole && <Route path="/About" element={AboutUs}></Route>}
+				{!userRole && <Route path="/ContactUs" element={ContactUs}></Route>} */}
 			</Routes>
+			{/* <Routes>
+				{userRole === 'artisan' && <Route path="/" element={<ArtisanDashboard />} />}
+				{userRole === 'client' && <Route path="/" element={<ClientDashboard />} />}
+				{!userRole && <Route path="/" element={<LandingPage/>}/>}
+				{!userRole && <Route path="/About" element={AboutUs}></Route>}
+				{!userRole && <Route path="/ContactUs" element={ContactUs}></Route>}
+			</Routes> */}
 		</Router>
-		// <div className="App">
-		// 	<LandingPage/>
-		// 	<ArtisanDashboard/>
-		// 	<ClientDashboard/>
-		// 	<Register/>
-		// 	<Login/>
-		// 	<ClientChatScreen/>
-		// 	<ClientProfile/>
-		// 	<PostForm/>
-		// 	<ArtisanProfile/>
-		// </div>
 	);
 }
 

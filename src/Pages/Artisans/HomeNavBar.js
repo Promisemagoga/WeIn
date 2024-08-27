@@ -1,6 +1,7 @@
 import { Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from "@mui/material";
 import React, { useState } from "react";
 import { Logout, Message, Settings } from "@mui/icons-material";
+import { auth } from "../../Config/Firebase";
 
 
 function HomeNav() {
@@ -15,10 +16,10 @@ function HomeNav() {
     };
 
     function logOut(event) {
-        // event.preventDefault();
-        // auth.signOut();
-        // window.location.reload();
-    }
+        auth.signOut();
+        console.log("User signed out!");
+        window.location.reload();
+      }
 
 
     return (

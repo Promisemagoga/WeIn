@@ -15,6 +15,144 @@
   height: 30px;
 }
 
+
+.dashboardHeader {
+  width: 100%;
+  height: 50vh;
+  background-image: url('./Assets/images/banner-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.dashboardBody {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+.postDet {
+  margin-left: auto;
+}
+
+.main-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin-left: auto;
+}
+
+.profileDet {
+  width: 25%;
+  height: 60vh;
+  position: absolute;
+  bottom: 150px;
+  left: 70px;
+  z-index: 50;
+  background-color: #ffffff;
+  padding-left: 20px;
+  box-shadow: 0px 4px 8px rgba(65, 109, 25, 0.5);
+  border-radius: 10px;
+}
+
+.profileDet img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.topDet {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.artisanDet h3,
+.topDet h3,.postCardDes h3 {
+  color: #416D19;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.5rem;
+}
+
+.profileButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 30px;
+  margin-top: 50px;
+}
+
+.belowHeaderNav {
+  background-color: rgba(99, 99, 99, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashHeaderCont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.dashHeaderCont input {
+  border: none;
+  height: 5vh;
+  border-radius: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-indent: 10px;
+}
+
+.dashboardHeaderCont input::after {
+  border: none;
+}
+
+.dashHeaderCont input:focus {
+  outline: none;
+}
+
+.profileButtons button {
+  background-color: #416D19;
+  color: #ffffff;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 5px;
+  width: 40%;
+  height: 5vh;
+}
+
+.topDet p,
+h3 {
+  margin: 10px 0px 0px 0px;
+}
+
+.postDet {
+  width: 60%;
+}
+
+
+
+.headerCover {
+  background-color: rgba(99, 99, 99, 0.2);
+  width: 100%;
+  height: 50vh;
+}
+
 .logoImg {
   width: 50px !important;
   height: 50px !important;
@@ -528,6 +666,18 @@ textarea {
   margin: 30px;
 }
 
+.clientsCard {
+  width: 90%;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: left;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin: 30px;
+}
+
 .postCard {
   width: 90%;
   height: auto;
@@ -546,7 +696,7 @@ textarea {
 }
 
 .topRatedCard-info {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: row;
 }
@@ -559,7 +709,7 @@ textarea {
   column-gap: 20px;
 }
 
-.postCard button{
+.postCard button {
   width: 50%;
   height: 8vh;
   background-color: #416D19;
@@ -570,7 +720,11 @@ textarea {
 }
 
 .postCardDes {
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.postCardDes p{
+  margin-top: 10px;
 }
 
 .gridCards {
@@ -585,8 +739,31 @@ textarea {
 }
 
 .topRatedCard img {
-  width: 40%;
+  width: 60%;
+  height: 5vh;
   height: 30vh;
+  border-radius: 5px;
+}
+
+.clientsCard img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.artisanDet {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.sendPropBtn {
+  margin-right: 20px;
+  height: 6vh;
+  background-color: #416D19;
+  color: #ffffff;
+  border: none;
+  width: 25%;
+  border-radius: 5px;
 }
 
 .postCard img {
@@ -628,7 +805,7 @@ main {
   background-color: #ffffff;
 }
 
-.modalContainer{
+.modalContainer {
   width: 100%;
   height: 200vh;
   display: flex;
@@ -653,28 +830,28 @@ form {
 
 .registerForm {
   overflow-y: scroll;
-  
+
 }
 
-.registerForm::-webkit-scrollbar{
+.registerForm::-webkit-scrollbar {
   display: none;
 }
 
 .groupInput {
   display: flex;
   flex-direction: row;
- column-gap: 10px;
+  column-gap: 10px;
 }
 
-.groupInput label{
+.groupInput label {
   width: 50%;
 }
 
-select{
+select {
   height: 7vh;
 }
 
-.checkboxes input{
+.checkboxes input {
   width: 5% !important;
   height: 2.5vh !important;
   margin-right: 5px;
